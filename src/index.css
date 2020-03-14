@@ -5,6 +5,45 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  height: 100% !important;
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+}
+
+.App {
+  height: 100% !important;
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.MuiPaper-root {
+  background-color: white !important;
+  color: black !important;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 36px;
+  padding: 20px;
+  flex: 1;
+}
+
+#dropZone {
+  text-align: center;
+  font-family: sans-serif;
+  background-color: rgb(135, 182, 182);
+  font-size: 36px;
+  padding: 20px;
+  flex: 1;
+}
+
+.MuiTabs-root {
+  background-color: rgb(152, 167, 126);
+  margin: 5px;
 }
 
 code {
@@ -12,15 +51,6 @@ code {
     monospace;
 }
 
-.Page1 {
-  height: 50vh;
-}
-
 p {
-  display: inline-block;
-}
-
-button {
-  padding: 5px;
-  margin: 5px;
+  display: inline-flex;
 }
