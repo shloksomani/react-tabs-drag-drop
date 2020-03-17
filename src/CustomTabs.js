@@ -14,21 +14,8 @@ function TabContainer(props) {
   // console.log(props);
   // var node = ReactDOM.findDOMNode(props);
   // console.log(node);
-  return (
-    <Typography component="div" id="data" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
+  return <Typography id="data">{props.children}</Typography>;
 }
-
-const copy = (source, destination, droppableSource, droppableDestination) => {
-  const sourceClone = Array.from(source);
-  const destClone = Array.from(destination);
-  const item = sourceClone[droppableSource.index];
-
-  destClone.splice(droppableDestination.index, 0, { ...item });
-  return destClone;
-};
 
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired
@@ -40,8 +27,22 @@ export default class CustomTabs extends Component {
     list: []
   };
 
+  element = (
+    <svg height="100" width="100">
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="black"
+        stroke-width="3"
+        fill="red"
+      />
+      Sorry, your browser does not support inline SVG.{" "}
+    </svg>
+  );
+
   list1 = {
-    name: "Demo1"
+    name: "shlok"
   };
 
   list2 = {
@@ -67,7 +68,7 @@ export default class CustomTabs extends Component {
           indicatorColor="primary"
           textColor="primary"
           onChange={this.handleChange}
-          aria-label="disabled tabs example"
+          aria-label="tabs"
         >
           <Tab label="Tab1" />
           <Tab label="Tab2" />

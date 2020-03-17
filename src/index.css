@@ -33,12 +33,14 @@ body {
 }
 
 #dropZone {
-  text-align: center;
   font-family: sans-serif;
   background-color: rgb(135, 182, 182);
   font-size: 36px;
   padding: 20px;
   flex: 1;
+
+  /* justify-content: space-between; */
+  position: relative;
 }
 
 .MuiTabs-root {
@@ -52,5 +54,21 @@ code {
 }
 
 p {
-  display: inline-flex;
+  position: fixed;
+}
+
+#data {
+  height: fit-content;
+  width: fit-content;
+}
+
+#dropDragZone {
+  position: absolute;
+}
+
+#dropDragZone div {
+  /* position: float; */
+  /* height: fit-content;
+    width: fit-content; */
+  display: inline-block;
 }

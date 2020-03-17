@@ -1,29 +1,56 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import uuid from "uuid/v4";
+import Drag2 from "./Drag2";
 
 export default class Drop extends Component {
   drop = e => {
     e.preventDefault();
     const data = e.dataTransfer.getData("transfer");
+    var dropDrag = document.getElementById("dropDragZone");
     let k = document.getElementById(data);
-    console.log(k instanceof HTMLElement);
 
-    var nodeCopy = k.cloneNode(true);
-    nodeCopy.setAttribute = ("id", uuid()); /* We cannot use the same ID */
-    // e.target.appendChild(nodeCopy);
+    // console.log(e);
+    var x = e.clientX; //x position within the element.
+    var y = e.clientY; //y position within the element.
 
-    console.log(nodeCopy);
-    console.log(e.target);
+    if (k.parentElement.id !== "dropDragZone") {
+      console.log("hereee");
+      var nodeCopy = k.cloneNode(true);
+      console.log(nodeCopy instanceof HTMLElement);
+      // nodeCopy.setAttributes = ("id", uuid());
+      nodeCopy.id = uuid(); /* We cannot use the same ID */
+      // e.target.appendChild(nodeCopy);
 
-    var link = document.createElement("p");
-    link.className = "link";
-    link.appendChild(nodeCopy);
-    link.children[0].draggable = false;
-    console.log(link.children[0].draggable);
-    e.target.appendChild(link);
+      console.log(nodeCopy);
+      nodeCopy.children[0].style.left = x + "px";
+      nodeCopy.children[0].style.top = y + "px";
 
-    // e.target.appendChild(document.getElementById(nodeCopy));
+      nodeCopy.style.left = x + "px";
+      nodeCopy.style.top = y + "px";
+
+      dropDrag.appendChild(nodeCopy);
+    } else {
+      console.log("notThere");
+      let divBoundary = window.getComputedStyle(
+        document.getElementById("dropZone"),
+        null
+      );
+      let divBoundaryHeight = parseInt(
+        divBoundary.getPropertyValue("height"),
+        10
+      );
+      let divBoundaryWidth = parseInt(
+        divBoundary.getPropertyValue("width"),
+        10
+      );
+
+      if (divBoundaryWidth >= x && x >= 10) k.children[0].style.left = x + "px";
+
+      if (divBoundaryHeight >= y && x >= 10) k.children[0].style.top = y + "px";
+    }
+
+    // console.log(x, y);
   };
 
   allowDrop = e => {
