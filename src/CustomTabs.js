@@ -42,7 +42,7 @@ export default class CustomTabs extends Component {
   );
 
   list1 = {
-    name: "shlok"
+    name: "Demo1"
   };
 
   list2 = {
