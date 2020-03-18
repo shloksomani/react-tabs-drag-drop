@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c8e5f8171156f2fe7aea958419792f5b",
+    "revision": "ac2f25102ed8cd2b63749f6542fadfaa",
     "url": "/react-tabs-drag-drop/index.html"
   },
   {
-    "revision": "b3d2905cdb06ecd8c95e",
+    "revision": "f65659789717dda2feaa",
     "url": "/react-tabs-drag-drop/static/css/main.2f06439f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-tabs-drag-drop/static/js/2.ea9cd896.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b3d2905cdb06ecd8c95e",
-    "url": "/react-tabs-drag-drop/static/js/main.3ca3e165.chunk.js"
+    "revision": "f65659789717dda2feaa",
+    "url": "/react-tabs-drag-drop/static/js/main.15bb3c84.chunk.js"
   },
   {
     "revision": "8536760ebb1ab3173869",
