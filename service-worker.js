@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-tabs-drag-drop/precache-manifest.0d78c66bad2cc114e0db88a868c66990.js"
+  "/react-tabs-drag-drop/precache-manifest.d3b85efba1739c1caf012c2c2cc25b38.js"
 );
 
 self.addEventListener('message', (event) => {
