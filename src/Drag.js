@@ -10,6 +10,10 @@ export default class Drop extends Component {
     e.stopPropagation();
   };
 
+  onClick = e => {
+    console.log("I am not done");
+  };
+
   render() {
     return (
       <div
@@ -17,6 +21,7 @@ export default class Drop extends Component {
         draggable="true"
         onDragStart={this.drag}
         onDragOver={this.notAllow}
+        onClick={this.onClick}
         style={this.props.style}
       >
         {this.props.children}

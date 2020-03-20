@@ -10,10 +10,8 @@ export default class Drop extends Component {
     var dropDrag = document.getElementById("dropDragZone");
     let k = document.getElementById(data);
 
-    // console.log(e);
     var x = e.clientX; //x position within the element.
     var y = e.clientY; //y position within the element.
-
     if (k.parentElement.id !== "dropDragZone") {
       console.log("hereee");
       var nodeCopy = k.cloneNode(true);
@@ -26,12 +24,10 @@ export default class Drop extends Component {
       nodeCopy.children[0].style.left = x + "px";
       nodeCopy.children[0].style.top = y + "px";
 
-      nodeCopy.style.left = x + "px";
-      nodeCopy.style.top = y + "px";
-
+      // nodeCopy.style.left = x + "px";
+      // nodeCopy.style.top = y + "px";
       dropDrag.appendChild(nodeCopy);
     } else {
-      console.log("notThere");
       let divBoundary = window.getComputedStyle(
         document.getElementById("dropZone"),
         null
@@ -57,6 +53,10 @@ export default class Drop extends Component {
     e.preventDefault();
   };
 
+  onClick = e => {
+    console.log("I am done");
+  };
+
   render() {
     return (
       <div
@@ -64,6 +64,7 @@ export default class Drop extends Component {
         onDrop={this.drop}
         onDragOver={this.allowDrop}
         style={this.props.style}
+        onClick={this.onClick}
       >
         {this.props.children}
       </div>

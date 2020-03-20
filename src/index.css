@@ -38,9 +38,8 @@ body {
   font-size: 36px;
   padding: 20px;
   flex: 1;
-
-  /* justify-content: space-between; */
   position: relative;
+  overflow: auto;
 }
 
 .MuiTabs-root {
@@ -54,7 +53,15 @@ code {
 }
 
 p {
-  position: fixed;
+  position: relative;
+  padding: 5px;
+  display: relative;
+}
+
+#dropDragZone p {
+  position: relative;
+  float: initial;
+  transform: translate(-50%, -50%);
 }
 
 #data {
@@ -63,12 +70,16 @@ p {
 }
 
 #dropDragZone {
-  position: absolute;
+  position: relative;
 }
 
 #dropDragZone div {
-  /* position: float; */
-  /* height: fit-content;
-    width: fit-content; */
-  display: inline-block;
+  position: relative;
+  max-width: 0;
+  max-height: 0;
+}
+
+.MuiPaper-root div:not(:first-child) {
+  height: fit-content;
+  width: fit-content;
 }

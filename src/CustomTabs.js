@@ -42,7 +42,30 @@ export default class CustomTabs extends Component {
   );
 
   list1 = {
-    name: "Demo1"
+    one: (
+      <svg width="100" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="green"
+          strokeWidth="4"
+          fill="yellow"
+        />
+      </svg>
+    ),
+    two: (
+      <svg width="100" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="green"
+          strokeWidth="4"
+          fill="red"
+        />
+      </svg>
+    )
   };
 
   list2 = {
@@ -76,9 +99,14 @@ export default class CustomTabs extends Component {
         </Tabs>
 
         {value === 0 && (
-          <Drag id={uuid()}>
-            <TabContainer>{this.list1.name}</TabContainer>
-          </Drag>
+          <React.Fragment>
+            <Drag id={uuid()}>
+              <TabContainer>{this.list1.one}</TabContainer>
+            </Drag>
+            <Drag id={uuid()}>
+              <TabContainer>{this.list1.two}</TabContainer>
+            </Drag>
+          </React.Fragment>
         )}
         {value === 1 && (
           <Drag id={uuid()}>
